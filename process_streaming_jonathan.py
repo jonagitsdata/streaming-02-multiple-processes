@@ -4,7 +4,7 @@ Streaming Process - port 9999
 
 First we need a fake stream of data. 
 
-We'll use the temperature data from the batch process.
+We'll use fake csv data from mockaroo.com.
 
 But we need to reverse the order of the rows 
 so we can read oldest data first.
