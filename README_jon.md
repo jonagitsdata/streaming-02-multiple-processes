@@ -1,5 +1,5 @@
 # streaming-02-multiple-processes
-
+## Jonathan Nkangabwa
 > Multiple processes accessing a shared resource concurrently
 
 ## Oveview
@@ -24,14 +24,14 @@ Executing multiple_processes.py script.
 Read the output. Read the code. 
 Try to figure out what's going on. 
 
-1. What libraries did we import?
-1. Where do we set the task_duration?
-1. How many functions are defined? 
-1. What are the function names? 
-1. In general, what does each function do? 
-1. Where does the execution begin?
-1. How many processes do we start?
-1. How many records does each process insert?
+1. What libraries did we import? ?**sqllite, time, multiprocessing, os, datetime, platform and sys**
+1. Where do we set the task_duration? **on line 34**
+1. How many functions are defined? **7 functions are defined** 
+1. What are the function names? **create_table, drop_table, insert_pet, process_one, process_two, process_three and recreate_database**
+1. In general, what does each function do? **Esentially creates a table, clears the table, inserts records, and re creates the entire table again**
+1. Where does the execution begin? **line 55 and below**
+1. How many processes do we start?**3 procedures**
+1. How many records does each process insert? **2 records**
 
 In this first run, we start 3 processes, 
 each inserting 2 records into a shared database 
@@ -95,15 +95,15 @@ Do a web search to find helpful videos on anything that seems confusing.
 Python has pretty helpful error messages. 
 When you get an error, read them carefully. 
 
-- What error do you get?
-- Can you tell what line it was executing when it failed?
+- What error do you get?**sqlite3.OperationalError: database is locked**
+- Can you tell what line it was executing when it failed?**I believe it was line 144 because it was not able to ADD Cooper the Rabbit**
 
 
 ## Database Is Locked Error
 
 Do a web search on the sqlite3 'database is locked' error.
 
-- What do you learn?
+- What do you learn?**Esentially it is hard to run multiple processes that require the same database/connection because while one may DROP a table, the other is trying to read and insert, but it cant since the table no longer exists**
 - Once a process fails, it crashes the main process and everything stops. 
 
 ## Deadlock
